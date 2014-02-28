@@ -1,0 +1,12 @@
+﻿Name: Simple Analytics
+AntiForgery: enabled
+Author: Lombiq
+Website: http://orchardsimpleanalytics.codeplex.com
+Version: 1.0
+OrchardVersion: 1.8
+Description: Adds the ability to simply configure an analytics script from site settings.
+Features:
+    Lombiq.SimpleAnalytics:
+		Name: Simple Analytics
+        Description: Adds the ability to simply configure an analytics script from site settings.
+		Category: Analytics
