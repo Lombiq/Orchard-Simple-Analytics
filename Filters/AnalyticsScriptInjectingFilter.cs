@@ -29,7 +29,7 @@ namespace Lombiq.SimpleAnalytics.Filters
 		
         public void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            // Should only run on a full view rendering result and on the frontend only.
+            // Should only run on a full view rendering result only.
             if (!(filterContext.Result is ViewResult)) return;
 
             var settings = _siteService.GetSiteSettings().As<AnalyticsSettingsPart>();
