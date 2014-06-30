@@ -87,7 +87,9 @@
     <Compile Include="Handlers\AnalyticsSettingsPartHandler.cs" />
     <Compile Include="Models\AnalyticsSettingsPart.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Licence.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Placement.info" />
   </ItemGroup>
