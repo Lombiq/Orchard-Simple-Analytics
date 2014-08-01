@@ -88,7 +88,7 @@
     <Compile Include="Models\AnalyticsSettingsPart.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Licence.md" />
+    <None Include="Licence.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Placement.info" />
