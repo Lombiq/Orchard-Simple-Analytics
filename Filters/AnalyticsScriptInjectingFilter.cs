@@ -26,7 +26,7 @@ namespace Lombiq.SimpleAnalytics.Filters
             _resourceManager = resourceManager;
         }
         
-		
+        
         public void OnResultExecuting(ResultExecutingContext filterContext)
         {
             // Should only run on a full view rendering result only.
