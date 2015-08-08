@@ -9,6 +9,7 @@ using Orchard.UI.Admin;
 using Orchard.UI.Resources;
 using Orchard.ContentManagement;
 using Lombiq.SimpleAnalytics.Models;
+using System.Text.RegularExpressions;
 
 namespace Lombiq.SimpleAnalytics.Filters
 {
@@ -38,12 +39,15 @@ namespace Lombiq.SimpleAnalytics.Filters
 
             if (string.IsNullOrEmpty(settings.AnalyticsScript)) return;
 
+            // Remove script tag
+            var analyticsScriptWithoutScriptTag = Regex.Replace(settings.AnalyticsScript, @"<[/script>]*>", "", RegexOptions.IgnoreCase);
+
             // In case you haven't seen javascript in an MVC result filter today.
-            _resourceManager.RegisterHeadScript("<script type=\"text/javascript\">" + settings.AnalyticsScript + "</script>");
+            _resourceManager.RegisterHeadScript("<script type=\"text/javascript\">" + analyticsScriptWithoutScriptTag + "</script>");
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)
-        {
+        { 
         }
     }
 }
