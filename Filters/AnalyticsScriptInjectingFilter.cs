@@ -39,11 +39,8 @@ namespace Lombiq.SimpleAnalytics.Filters
 
             if (string.IsNullOrEmpty(settings.AnalyticsScript)) return;
 
-            // Remove script tag
-            var analyticsScriptWithoutScriptTag = Regex.Replace(settings.AnalyticsScript, @"<[/script>]*>", "", RegexOptions.IgnoreCase);
-
             // In case you haven't seen javascript in an MVC result filter today.
-            _resourceManager.RegisterHeadScript("<script type=\"text/javascript\">" + analyticsScriptWithoutScriptTag + "</script>");
+            _resourceManager.RegisterHeadScript("<script type=\"text/javascript\">" + settings.AnalyticsScript + "</script>");
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)
