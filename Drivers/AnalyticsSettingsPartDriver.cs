@@ -13,9 +13,6 @@ namespace Lombiq.SimpleAnalytics.Drivers
     {
         protected override DriverResult Editor(AnalyticsSettingsPart part, dynamic shapeHelper)
         {
-            // Remove script tag.
-            part.AnalyticsScript = Regex.Replace(part.AnalyticsScript, @"<(/|)script>", "", RegexOptions.IgnoreCase);
-
             return Editor(part, null, shapeHelper);
         }
 
@@ -27,6 +24,9 @@ namespace Lombiq.SimpleAnalytics.Drivers
                     if (updater != null)
                     {
                         updater.TryUpdateModel(part, Prefix, null, null);
+
+                        // Remove script tag.
+                        part.AnalyticsScript = Regex.Replace(part.AnalyticsScript, @"<(/|)script.*?>", "", RegexOptions.IgnoreCase);
                     }
 
                     return shapeHelper.EditorTemplate(
