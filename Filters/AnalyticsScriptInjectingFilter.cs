@@ -9,7 +9,6 @@ using Orchard.UI.Admin;
 using Orchard.UI.Resources;
 using Orchard.ContentManagement;
 using Lombiq.SimpleAnalytics.Models;
-using System.Text.RegularExpressions;
 
 namespace Lombiq.SimpleAnalytics.Filters
 {
@@ -44,7 +43,7 @@ namespace Lombiq.SimpleAnalytics.Filters
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)
-        { 
+        {
         }
     }
 }

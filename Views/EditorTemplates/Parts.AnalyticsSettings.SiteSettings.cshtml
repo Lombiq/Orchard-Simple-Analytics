@@ -10,12 +10,10 @@
             <span class="hint">@T("This script will be injected into the head of the site. E.g. you can copy your async Google Analytics tracking code here.")</span>
         </li>
         <li>
-            <div>
-                @Html.EditorFor(m => m.IncludeOnAdmin)
-                <label for="@Html.FieldIdFor(m => m.IncludeOnAdmin)" class="forcheckbox">@T("Include script on the admin site")</label>
-                @Html.ValidationMessageFor(m => m.IncludeOnAdmin)
-                <span class="hint">@T("If checked, the script will be included not just on the frontend but also on the admin.")</span>
-            </div>
+            @Html.EditorFor(m => m.IncludeOnAdmin)
+            <label for="@Html.FieldIdFor(m => m.IncludeOnAdmin)" class="forcheckbox">@T("Include script on the admin site")</label>
+            @Html.ValidationMessageFor(m => m.IncludeOnAdmin)
+            <span class="hint">@T("If checked, the script will be included not just on the frontend but also on the admin.")</span>
         </li>
     </ol>
 </fieldset>
