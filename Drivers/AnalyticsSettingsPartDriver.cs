@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using Lombiq.SimpleAnalytics.Models;
 using Orchard.ContentManagement;
@@ -13,7 +14,6 @@ namespace Lombiq.SimpleAnalytics.Drivers
         protected override DriverResult Editor(AnalyticsSettingsPart part, dynamic shapeHelper)
         {
             return Editor(part, null, shapeHelper);
-
         }
 
         protected override DriverResult Editor(AnalyticsSettingsPart part, IUpdateModel updater, dynamic shapeHelper)
@@ -24,6 +24,9 @@ namespace Lombiq.SimpleAnalytics.Drivers
                     if (updater != null)
                     {
                         updater.TryUpdateModel(part, Prefix, null, null);
+
+                        // Remove script tag.
+                        part.AnalyticsScript = Regex.Replace(part.AnalyticsScript, @"<(/|)script.*?>", "", RegexOptions.IgnoreCase);
                     }
 
                     return shapeHelper.EditorTemplate(
