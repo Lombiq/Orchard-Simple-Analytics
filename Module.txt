@@ -1,7 +1,7 @@
 Name: Simple Analytics
 AntiForgery: enabled
 Author: Lombiq
-Website: http://orchardsimpleanalytics.codeplex.com
+Website: https://github.com/Lombiq/Orchard-Simple-Analytics
 Version: 1.0
 OrchardVersion: 1.9.0
 Description: Adds the ability to simply configure an analytics script from site settings.
