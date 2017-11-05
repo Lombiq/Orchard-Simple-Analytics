@@ -21,13 +21,7 @@ namespace Lombiq.SimpleAnalytics.Drivers
             return ContentShape("Parts_AnalyticsSettings_SiteSettings_Edit",
                 () =>
                 {
-                    if (updater != null)
-                    {
-                        updater.TryUpdateModel(part, Prefix, null, null);
-
-                        // Remove script tag.
-                        part.AnalyticsScript = Regex.Replace(part.AnalyticsScript, @"<(/|)script.*?>", "", RegexOptions.IgnoreCase);
-                    }
+                    if (updater != null) updater.TryUpdateModel(part, Prefix, null, null);
 
                     return shapeHelper.EditorTemplate(
                         TemplateName: "Parts.AnalyticsSettings.SiteSettings",

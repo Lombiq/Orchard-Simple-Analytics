@@ -38,8 +38,15 @@ namespace Lombiq.SimpleAnalytics.Filters
 
             if (string.IsNullOrEmpty(settings.AnalyticsScript)) return;
 
-            // In case you haven't seen javascript in an MVC result filter today.
-            _resourceManager.RegisterHeadScript("<script type=\"text/javascript\">" + settings.AnalyticsScript + "</script>");
+            var analyticsScript = settings.AnalyticsScript;
+
+            if (!analyticsScript.Contains("<script"))
+            {
+                // In case you haven't seen javascript in an MVC result filter today.
+                analyticsScript = "<script type=\"text/javascript\">" + analyticsScript + "</script>";
+            }
+
+            _resourceManager.RegisterHeadScript(analyticsScript);
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)

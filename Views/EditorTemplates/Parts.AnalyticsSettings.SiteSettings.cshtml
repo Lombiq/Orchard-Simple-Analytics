@@ -7,7 +7,7 @@
             @Html.LabelFor(m => m.AnalyticsScript, T("Analytics script"))
             @Html.TextAreaFor(m => m.AnalyticsScript, new { @class = "text large" })
             @Html.ValidationMessageFor(m => m.AnalyticsScript)
-            @Html.Hint(T("This script will be injected into the head of the site. E.g. you can copy your async Google Analytics tracking code here."))
+            @Html.Hint(T("This script will be injected into the head of the site. E.g. you can copy your async Google Analytics tracking code here. This will be wrapped into a &lt;script&gt; tag unless the code inside also contains such a tag."))
         </li>
         <li>
             @Html.EditorFor(m => m.IncludeOnAdmin)
